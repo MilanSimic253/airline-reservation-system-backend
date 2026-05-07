@@ -1,0 +1,9 @@
+CREATE TABLE booking (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    flight_id BIGINT NOT NULL,
+    seat_number INT NOT NULL,
+    confirmed BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (flight_id) REFERENCES flight(id) ON DELETE CASCADE
+);
